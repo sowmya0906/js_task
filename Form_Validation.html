@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>sample registration form</title>
+
+<link rel='stylesheet' href='js-form-validation.css' type='text/css' />
+
+<script>
+    function formValidation(){  
+var name=document.myform.username.value;  
+var password=document.myform.passid.value; 
+var email=document.myform.email.value;
+        
+if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+ else if(email.indexOf("@", 0) < 0 || email.indexOf(".", 0) < 0)
+  {
+      alert("Please enter a valid email address")
+    return false;
+  }
+}  
+    </script>
+</head>
+
+<body>
+<h1>Registration Form</h1>
+
+<form name='myform' onSubmit="return formValidation();">
+<ul>
+    <li><label for="username">Name:</label></li>
+<li><input type="text" name="username" size="50" required/></li>
+
+<li><label for="passid">Password:</label></li>
+<li><input type="password" name="passid" size="12" required /></li>
+
+
+
+<li><label for="address">Address:</label></li>
+<li><input type="text" name="address" size="50" required/></li>
+
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" size="50" required/></li>
+
+
+<li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
+</body>
+</html>
